@@ -14,10 +14,16 @@ const createWindow = () => {
       height: 174,
       icon: __dirname + "/favicon.ico",
       frame: false,
+      webPreferences: {
+         nodeIntegration: true,
+         enableRemoteModule: true,
+      },
    });
 
    // and load the index.html of the app.
    mainWindow.loadFile(path.join(__dirname, "index.html"));
+
+   mainWindow.setResizable(true);
 };
 
 // This method will be called when Electron has finished

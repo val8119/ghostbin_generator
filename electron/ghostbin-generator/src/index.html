@@ -13,10 +13,11 @@
 <body>
   <main>
     <div class="title-bar">
+      <div class="draggable"></div>
       <img src="favicon.ico" alt="">
       <span class="title-bar-text">Ghostbin Generator</span>
-      <button class="close"></button>
-      <button class="minimize"></button>
+      <button class="close" id="close-btn"></button>
+      <button class="minimize" id="min-btn"></button>
     </div>
     <p>Generate ghostbin URLs, save valid URLs to a text file.</p>
     <div class="generate-cont">
@@ -25,6 +26,33 @@
     </div>
     <p class="status-p">Status: <span class="status">IDLE</span></p>
   </main>
+
+  <script>
+    const electron = require("electron");
+    const remote = require("electron").remote;
+    const fs = require('fs');
+    const app = require("electron").remote.app;
+
+    let desktopPath = app.getPath("desktop");
+
+
+    document.getElementById("min-btn").addEventListener("click", function (e) {
+      let w = remote.getCurrentWindow();
+      w.minimize();
+    });
+
+    document.getElementById("close-btn").addEventListener("click", function (e) {
+      let w = remote.getCurrentWindow();
+      w.close();
+    });
+
+    let text = "test message";
+
+    // write to a new file named 2pac.txt
+    fs.writeFile(desktopPath + "\\text.txt", text, (err) => {
+      if (err) throw err;
+    });
+  </script>
 </body>
 
 </html>

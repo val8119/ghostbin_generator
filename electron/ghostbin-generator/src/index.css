@@ -33,11 +33,18 @@ main {
   height: 175px;
 }
 
+.draggable {
+  width: 247px;
+  height: 23px;
+  position: absolute;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
 .title-bar {
   background: var(--background-secondary);
   width: 300px;
   height: 23px;
-  -webkit-app-region: drag;
 }
 
 .title-bar-text {
