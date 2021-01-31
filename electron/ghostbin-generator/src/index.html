@@ -28,6 +28,15 @@
   </main>
 
   <script>
+    const Http = new XMLHttpRequest();
+    const url = 'https://ghostbin.co/paste/4o2fd/raw';
+    Http.open("GET", url);
+    Http.send();
+
+    Http.onreadystatechange = (e) => {
+      console.log(Http.responseText)
+    }
+
     const electron = require("electron");
     const remote = require("electron").remote;
     const fs = require('fs');
@@ -47,12 +56,17 @@
     });
 
     function generateGhostbins() {
-      var amount = Number(document.)
+      var amount = Number(document.querySelector(".amount").value);
+
       var text = "AAAAA";
 
       fs.appendFile(desktopPath + "\\ghostbins.txt", text + "\n", (err) => {
         if (err) throw err;
       });
+
+      document.querySelector(".generate").addEventListener("click", function () {
+        // generateGhostbins();
+      })
     }
   </script>
 </body>
