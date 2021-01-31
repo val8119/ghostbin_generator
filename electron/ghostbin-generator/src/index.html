@@ -46,10 +46,10 @@
       w.close();
     });
 
-    let text = "test message";
+    let text = "AAAAA";
 
     // write to a new file named 2pac.txt
-    fs.writeFile(desktopPath + "\\text.txt", text, (err) => {
+    fs.appendFile(desktopPath + "\\ghostbins.txt", text + "\n", (err) => {
       if (err) throw err;
     });
   </script>
