@@ -21,7 +21,7 @@
     </div>
     <p>Generate ghostbin URLs, save valid URLs to a text file.</p>
     <div class="generate-cont">
-      <input type="text" class="amount" placeholder="Amount">
+      <input type="number" class="amount" placeholder="Amount">
       <button class="generate">Generate</button>
     </div>
     <p class="status-p">Status: <span class="status">IDLE</span></p>
@@ -46,12 +46,14 @@
       w.close();
     });
 
-    let text = "AAAAA";
+    function generateGhostbins() {
+      var amount = Number(document.)
+      var text = "AAAAA";
 
-    // write to a new file named 2pac.txt
-    fs.appendFile(desktopPath + "\\ghostbins.txt", text + "\n", (err) => {
-      if (err) throw err;
-    });
+      fs.appendFile(desktopPath + "\\ghostbins.txt", text + "\n", (err) => {
+        if (err) throw err;
+      });
+    }
   </script>
 </body>
 
